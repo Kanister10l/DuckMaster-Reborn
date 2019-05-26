@@ -2,14 +2,19 @@
 <div class="app-content">
   <div class="level-container">
     <p class="level-descriptor">Level</p>
-    <p class="level-number">3</p>
+    <p (click)="test($event)" class="level-number">{{ Level }}</p>
   </div>
-  <canvas class="gameplay"></canvas>
+  <canvas #canvas class="gameplay"></canvas>
   <div class="player-model"></div>
   <div class="hud">
-    <div class="ammo"></div>
+    <div class="ammo">
+      <p>{{ Ammo }}</p>
+    </div>
     <div class="inventory"></div>
-    <div class="stats">STATS</div>
+    <div class="stats">
+      <p>Score: {{ Score }}</p>
+      <p>Money: {{ Money }}</p>
+    </div>
     <div class="menu">MENU</div>
   </div>
 </div>
