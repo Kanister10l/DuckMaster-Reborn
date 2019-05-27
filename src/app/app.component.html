@@ -5,17 +5,52 @@
     <p (click)="test($event)" class="level-number">{{ Level }}</p>
   </div>
   <canvas #canvas class="gameplay"></canvas>
-  <div class="player-model"></div>
+  <div class="player-model">
+    <img #player class="player-img" src="assets/images/gopher.png">
+    <img #weapon class="weapon-img" src="assets/images/bow.png">
+  </div>
   <div class="hud">
     <div class="ammo">
-      <p>{{ Ammo }}</p>
+      <p>Arrows left: {{ Ammo }}</p>
     </div>
-    <div class="inventory"></div>
+    <div class="inventory">
+      <div (click)="buyQ1()" class="item">
+        <img src="assets/images/quiver4.png">
+        <p>Price: 50</p>
+      </div>
+      <div (click)="buyQ2()" class="item">
+        <img src="assets/images/quiver6.png">
+        <p>Price: 150</p>
+      </div>
+      <div (click)="buyWindu()" class="item">
+        <img src="assets/images/windu.png">
+        <p>Price: 100</p>
+      </div>
+      <div (click)="buyPiercer()" class="item">
+        <img src="assets/images/pierce.png">
+        <p>Price: 300</p>
+      </div>
+      <div (click)="buyThanos()" class="item">
+        <img src="assets/images/thanos_color.png">
+        <p>Price: 1000</p>
+      </div>
+      <div (click)="buyGold()" class="item">
+        <img src="assets/images/goldbar.png">
+        <p>Price: 1000</p>
+      </div>
+    </div>
     <div class="stats">
       <p>Score: {{ Score }}</p>
       <p>Money: {{ Money }}</p>
     </div>
-    <div class="menu">MENU</div>
+    <div class="menu">
+      <div (click)="loadGame()" class="load">
+        <img src="assets/images/load.png">
+      </div>
+      <div (click)="saveGame()" class="save">
+        <img src="assets/images/save.png">
+      </div>
+    </div>
   </div>
 </div>
 
